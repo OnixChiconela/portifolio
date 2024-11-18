@@ -121,7 +121,7 @@ export const HiSection = () => {
                 <div className="col-span-7 justify-center text-center sm:text-left lg:pr-2">
                     <h1 className="mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-900">
-                            HI, I'm {""}
+                            HI, I&apos;m {""}
                         </span>
                         <text className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-fuchsia-950 to-black">Jose Chiconela</text>
                     </h1>
@@ -163,9 +163,9 @@ export const HiSection = () => {
                             src={selectedImage}
                             alt="Selected"
                             className="object-contain mx-auto"
-                            width={800} // Defina o tamanho desejado ou baseado na proporção da imagem
-                            height={600} // Defina o tamanho desejado ou baseado na proporção da imagem
-                            style={{ maxHeight: '80vh', maxWidth: '100%' }} // Usando estilo inline para controlar a altura e largura máximas
+                            width={800}
+                            height={600}
+                            style={{ maxHeight: '80vh', maxWidth: '100%' }}
                         />
                     </div>
                 </div>
