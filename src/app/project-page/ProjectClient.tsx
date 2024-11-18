@@ -99,7 +99,7 @@ const ProjectClient: React.FC<ProjectClientProps> = ({
             >
                 <div className="text-center text-xl font-extrabold bg-clip-text text-transparent 
           bg-gradient-to-r from-fuchsia-900 via-black to-red-500">
-                    If you think the code is perfect, it’s because you haven’t run it in production yet
+                    If you think the code is perfect, it&apos;s because you haven&apos;t run it in production yet
                 </div>
                 <text>__</text>
                 <text> 💀 😅 </text>

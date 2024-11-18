@@ -12,13 +12,13 @@ export const ClientOnly: React.FC<ClientOnlyProps> = ({
     const [hasMaunted, setHasMaunted] = useState(false)
     useEffect(() => {
         setHasMaunted(true)
-    })
+    }, [])
     if (!hasMaunted) {
         return null;
     }
     return (
         <>
-        {children}
+            {children}
         </>
     )
 }
