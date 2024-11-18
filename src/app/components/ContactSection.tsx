@@ -45,8 +45,8 @@ const ContactSection = () => {
             <div>
                 <h5 className="text-xl font-bold text-white my-2">Get in touch</h5>
                 <p className="text-[#f0f0f0] mb-4 max-w-md">
-                    I'm looking for new experiences both professional and personal, you can reach me just
-                    to say hi, I'll try my best to get back to you :{")"}
+                    I’m looking for new experiences both professional and personal, you can reach me just
+                    to say hi, I’ll try my best to get back to you :{")"}
                 </p>
                 <div className="socials flex flex-row gap-5">
                     <Link href={"https://github.com/OnixChiconela"} className="flex flex-col gap-2 items-center">
