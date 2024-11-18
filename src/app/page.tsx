@@ -1,113 +1,301 @@
-import Image from "next/image";
+
+"use client";
+
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { HiSection } from "./components/HiSection";
+import AboutSection from "./components/AboutSection";
+import ProjectsSection from "./components/ProjectsSection";
+import ContactSection from "./components/ContactSection";
+import Experience from "./components/Experience";
+import { listingdesc2, listingdesc3, listingsdesc1, webtraffic1, webtraffic2 } from "./types";
+import { Navbar } from "./components/navbar/Navbar";
+
+const scrollAnimation = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
 
 export default function Home() {
+  const [sectionVisible, setSectionVisible] = useState({
+    hiSection: false,
+    about: false,
+    experience: false,
+    additionalExperience: false,
+    projects: false,
+    contact: false,
+  });
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    // Atualiza a visibilidade das seções com base na posição do scroll
+    if (scrollY > 0) setSectionVisible((prev) => ({ ...prev, about: true }));
+    if (scrollY > windowHeight) setSectionVisible((prev) => ({ ...prev, experience: true }));
+    if (scrollY > windowHeight * 1.5) setSectionVisible((prev) => ({ ...prev, additionalExperience: true }));
+    if (scrollY > windowHeight * 2) setSectionVisible((prev) => ({ ...prev, projects: true }));
+    if (scrollY > windowHeight * 2.5) setSectionVisible((prev) => ({ ...prev, contact: true }));
+  };
+
+  useEffect(() => {
+    // Animação de fade-in para a seção HiSection
+    setSectionVisible((prev) => ({ ...prev, hiSection: true }));
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const hiSectionRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  const endAnimation = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  const colorAnimation = {
+    hidden: { opacity: 0, backgroundPosition: "0% 50%" },
+    visible: {
+      opacity: 1,
+      backgroundPosition: "100% 50%"
+    },
+  };
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div>
+      <Navbar
+        refs={{
+          hiSection: hiSectionRef,
+          about: aboutRef,
+          experience: experienceRef,
+          projects: projectsRef,
+          contact: contactRef,
+        }}
+      />
+      <div className="bg-white h-full flex flex-col">
+        {/* Seção HiSection */}
+        <motion.div
+          ref={hiSectionRef}
+          className="mt-16 px-20 lg:px-28 flex items-center justify-center max-w-screen-xl mx-auto"
+          initial="hidden"
+          animate="visible"
+          variants={scrollAnimation}
+          transition={{ duration: 0.8 }}
+        >
+          <HiSection />
+        </motion.div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+        <motion.div
+          className="border-b-[1px] my-20"
+          initial={{ opacity: 0 }}
+          animate={sectionVisible.about ? "visible" : "hidden"}
+          variants={scrollAnimation}
+          transition={{ duration: 0.6 }}
         />
+
+        {/* Seção About */}
+        <motion.div
+          ref={aboutRef}
+          className="px-20 lg:px-28 flex justify-center items-center max-w-screen-xl mx-auto"
+          initial="hidden"
+          animate={sectionVisible.about ? "visible" : "hidden"}
+          variants={scrollAnimation}
+          transition={{ duration: 0.8 }}
+        >
+          <AboutSection />
+        </motion.div>
+
+        <motion.div
+          className="border-b-[1px] my-20"
+          initial={{ opacity: 0 }}
+          animate={sectionVisible.experience ? "visible" : "hidden"}
+          variants={scrollAnimation}
+          transition={{ duration: 0.6 }}
+        />
+
+        {/* Seção Experience */}
+        <motion.div
+          className="px-4 lg:px-28 pb-10 max-w-screen-xl mx-auto"
+          initial="hidden"
+          animate={sectionVisible.experience ? "visible" : "hidden"}
+          variants={scrollAnimation}
+          transition={{ duration: 0.8 }}
+        >
+
+          <div className="flex justify-center items-center mb-10">
+            <text className="
+          font-extrabold text-xl lg:text-2xl text-transparent items-center
+          bg-clip-text bg-gradient-to-r from-gray-900 
+        via-fuchsia-950 to-black
+  ">
+              Experience
+            </text>
+          </div>
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center px-4 lg:px-28 max-w-screen-xl mx-auto">
+          <Experience
+            title="Leeva Digital Agency"
+            companyName="Intern"
+            duration="Sep 2023 - Jan 2024"
+            content={[
+              "Replaced Firebase with a custom backend service for scalability.",
+              "Defined system requirements in close collaboration with clients.",
+              "Enhanced system efficiency through RESTful API development."
+            ]}
+          />
+          <Experience
+            title="Reus Listing and Reserves"
+            companyName="Software Developer"
+            duration="Jan 2024 - Present"
+            content={[
+              "Designed and implemented user-friendly interfaces.",
+              "Improved the backend performance of existing services.",
+              "Worked with Agile teams to deliver high-quality software."
+            ]}
+          />
+        </div> */}
+          <div className="px-4 lg:px-28 mt-6 flex justify-center items-center max-w-screen-xl mx-auto">
+            <Experience
+              title="Intern Full-Stack Developer"
+              companyName="Leeva Digital Agency"
+              duration="Sep 2023 - Jan 2024"
+              content={[
+                "I worked on developing a backend service to replace Firebase for a custom printing company.",
+                "Designed and implemented backend RESTful APIs using PHP, enhancing system efficiency and providing the client with control and scalabilty.",
+                "Collabored closely with the client to define sytem requirements, establish goals, and ensure their vision was met.",
+              ]}
+              tools={"Tools"}
+              toolsDesc="PHP, Angular, MySQL, others"
+            />
+          </div>
+        </motion.div>
+
+
+        {/* Seção Additional Experience */}
+        <motion.div
+          className="px-4 lg:px-28 pb-10 max-w-screen-xl mx-auto"
+          initial="hidden"
+          animate={sectionVisible.additionalExperience ? "visible" : "hidden"}
+          variants={scrollAnimation}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div
+            className="border-b-[1px] my-10"
+            initial={{ opacity: 0 }}
+            animate={sectionVisible.additionalExperience ? "visible" : "hidden"}
+            variants={scrollAnimation}
+            transition={{ duration: 0.6 }}
+          />
+          <div className="flex justify-center items-center mb-10">
+            <text className="
+           font-extrabold text-xl lg:text-2xl text-transparent items-center
+           bg-clip-text bg-gradient-to-r from-gray-900 
+         via-fuchsia-950 to-black
+  ">
+              Additional Experience
+            </text>
+          </div>
+          <div className="grid grid-cols-1 xl:grid-cols-2 px-4 lg:px-28 max-w-screen-xl mx-auto">
+            <Experience
+              title="Software developer (owner)"
+              companyName="Restaurants project"
+              duration=""
+              content={[
+                listingsdesc1,
+                listingdesc2,
+                listingdesc3
+              ]}
+              tools="Tools"
+              toolsDesc="TypeScript, Nest JS, react native, JWT, MongoDB, and other technologies to create both frontend and backend components"
+              comp={"Project Completion"}
+              compDesc="December 2024 - January 2025"
+            />
+            <Experience
+              title="Software developer (owner)"
+              companyName="Web Traffic Management"
+              duration=""
+              content={[
+                webtraffic1,
+                webtraffic2,
+              ]}
+              tools="Tools"
+              toolsDesc="Java, Spring Boot, MySQL, others"
+              comp={"Project Completion"}
+              compDesc="No scheduled completation"
+            />
+          </div>
+        </motion.div>
+
+        {/* Seção Projects */}
+        <div className="bg-[#161616] min-h-screen flex flex-col">
+
+          <motion.div
+            ref={projectsRef}
+            className="px-4 lg:px-28 flex justify-center items-center max-w-screen-xl mx-auto"
+            initial="hidden"
+            animate={sectionVisible.projects ? "visible" : "hidden"}
+            variants={scrollAnimation}
+            transition={{ duration: 0.8 }}
+          >
+            <ProjectsSection />
+          </motion.div>
+
+          <motion.div
+            className="bg-[#161616] h-full py-10"
+            initial="hidden"
+            animate={sectionVisible.contact ? "visible" : "hidden"}
+            variants={scrollAnimation}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div
+              className="border-b-[1px] my-16"
+              initial={{ opacity: 0 }}
+              animate={sectionVisible.projects ? "visible" : "hidden"}
+              variants={scrollAnimation}
+              transition={{ duration: 0.6 }}
+            />
+            <motion.div
+              ref={contactRef}
+              className="px-14 lg:px-28 pb-10 max-w-screen-xl mx-auto"
+              initial="hidden"
+              animate={sectionVisible.about ? "visible" : "hidden"}
+              variants={scrollAnimation}
+              transition={{ duration: 0.8 }}
+            >
+              <ContactSection />
+            </motion.div>
+          </motion.div>
+          <div className="flex-1"></div>
+        </div>
+        <motion.div
+          className="flex justify-center items-center mt-20 mb-10"
+          initial="hidden"
+          animate="visible"
+          variants={endAnimation}
+          
+          transition={{ duration: 0.6 }}
+        >
+          <div className="text-center text-xl font-extrabold bg-clip-text text-transparent 
+          bg-gradient-to-r from-fuchsia-900 via-black to-red-500">
+            If you think the code is perfect, it's because you haven’t run it in production yet 
+          </div>
+          <text>__</text>
+          <text> 💀 😅 </text>
+        </motion.div>
+
+        {/* <div className="h-16 bg-gradient-to-b from-[#d2d2d2] to-[#fff]" /> */}
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
+
 }
+
+
+
+
