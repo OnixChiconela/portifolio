@@ -54,7 +54,7 @@ export const projectR: Project =
 
     impact: `This project has been impactful for me personally, as it has significantly enhanced both my technical and interpersonal skills. I had the opportunity to
      learn from more experienced professionals. Beyond my own growth, 
-     Espero que o projecto por si so traga um impacto positivo, pois me dediquei e me dedico para isso nao da para des`,
+     `,
 
     userImpact: `I hope this project has a positive impact on users, whether they are restaurant hosts or visitors.
 The main goal is to provide visibility to small, medium, and large establishments while also connecting people to new gastronomic experiences and exciting new places.`,

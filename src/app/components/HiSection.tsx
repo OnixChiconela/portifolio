@@ -71,10 +71,13 @@ export const HiSection = () => {
                             </button>
                         </div>
 
-                        <img
+                        <Image
                             src={selectedImage}
                             alt="Selected"
-                            className="object-contain max-w-full max-h-[80vh] mx-auto"
+                            className="object-contain mx-auto"
+                            width={800} // Defina o tamanho desejado ou baseado na proporção da imagem
+                            height={600} // Defina o tamanho desejado ou baseado na proporção da imagem
+                            style={{ maxHeight: '80vh', maxWidth: '100%' }} // Usando estilo inline para controlar a altura e largura máximas
                         />
                     </div>
                 </div>
