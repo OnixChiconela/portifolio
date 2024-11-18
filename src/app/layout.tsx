@@ -9,7 +9,10 @@ export const metadata: Metadata = {
 };
 
 const font = Nunito_Sans({
-  subsets: ["latin"],
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+
 });
 
 export default async function RootLayout({
