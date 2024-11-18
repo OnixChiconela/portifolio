@@ -23,7 +23,7 @@ export const HiSection = () => {
                     >
                         <Image
                             src={`/profile.png`}
-                            alt="it's Onix"
+                            alt="it&apos;s Onix"
                             className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full"
                             width={200}
                             height={100}

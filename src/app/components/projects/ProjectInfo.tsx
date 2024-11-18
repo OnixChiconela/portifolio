@@ -25,7 +25,7 @@ interface ProjectInfoProps {
     stages?: string[];
 }
 
-interface imageProps { src?: string }
+interface imageProps { src: string | undefined }
 
 
 const ProjectInfo: React.FC<ProjectInfoProps> = ({
@@ -59,6 +59,8 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
     };
 
     const ImageCard: React.FC<imageProps> = ({ src }) => {
+        if (!src) return null; // Se não tiver src, não renderiza nada
+
         return (
             <div className="h-40 lg:hover:-mt-1 md:h-80 rounded-md cursor-pointer
                 p-1 border-transparent bg-clip-border bg-gradient-to-b
@@ -67,7 +69,7 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
             "
                 onClick={() => handleImageClick(src)}
             >
-                <img src={src} alt="Image 1" className="object-cover h-full w-full rounded-md" />
+                <Image src={src} height={300} width={200} alt="Image 1" className="object-cover h-full w-full rounded-md" />
             </div>
         )
     }

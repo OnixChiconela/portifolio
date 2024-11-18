@@ -278,12 +278,12 @@ export default function Home() {
           initial="hidden"
           animate="visible"
           variants={endAnimation}
-          
+
           transition={{ duration: 0.6 }}
         >
           <div className="text-center text-xl font-extrabold bg-clip-text text-transparent 
           bg-gradient-to-r from-fuchsia-900 via-black to-red-500">
-            If you think the code is perfect, it's because you have&apos;t run it in production yet 
+            If you think the code is perfect, it&apos;s because you haven&apos;t run it in production yet
           </div>
           <text>__</text>
           <text> 💀 😅 </text>
