@@ -121,7 +121,7 @@ export const HiSection = () => {
                 <div className="col-span-7 justify-center text-center sm:text-left lg:pr-2">
                     <h1 className="mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-900">
-                            HI, I&apos;m {""}
+                            {"HI, I'm "}
                         </span>
                         <text className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-fuchsia-950 to-black">Jose Chiconela</text>
                     </h1>
