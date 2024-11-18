@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const AboutText = () => {
   return (
@@ -8,7 +8,7 @@ const AboutText = () => {
         functional solutions, this way I chose technology for my professional career. With a
         technical background and hands-on experience in <span className='font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-fuchsia-950 to-black'>software development</span>, 
         <span className='font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-fuchsia-950 to-black'> software design</span>. I want to specialize
-        in creating efficient, high-quality applications that meet users' needs.<br /><br />
+        in creating efficient, high-quality applications that meet users&apos; needs.<br /><br />
       </div>
       <div className='font-normal'>
         My journey in software engineering began with curiosity and became more intense when I got to
@@ -23,7 +23,7 @@ const AboutText = () => {
         new technologies.
       </div>
     </div>
-  )
+  );
 }
 
-export default AboutText
+export default AboutText;
