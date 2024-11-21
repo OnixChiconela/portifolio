@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { toast } from 'react-toastify'; // 
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -9,6 +11,8 @@ const ContactSection = () => {
         email: '',
         message: ''
     });
+
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleChange = (e: any) => {
         const { name, value } = e.target;
@@ -20,6 +24,8 @@ const ContactSection = () => {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
+        setIsLoading(true);
+
         try {
             const response = await fetch('/api/sendEmail', {
                 method: 'POST',
@@ -28,15 +34,16 @@ const ContactSection = () => {
                 },
                 body: JSON.stringify(formData),
             });
-    
+
             if (response.ok) {
-                console.log('Email sent successfully!');
-                // Você pode adicionar uma notificação ou resetar o formulário
+                toast.success('Email sent successfully!');
             } else {
-                console.error('Error sending email');
+                toast.error('Failed to send the email. Please try again.');
             }
         } catch (error) {
-            console.error('Error sending email:', error);
+            toast.error('An error occurred while sending the email.');
+        } finally {
+            setIsLoading(false)
         }
     };
 
@@ -50,17 +57,16 @@ const ContactSection = () => {
                 </p>
                 <div className="socials flex flex-row gap-5">
                     <Link href={"https://github.com/OnixChiconela"} className="flex flex-col gap-2 items-center">
-                        <Image src={"/github.svg"} width={40} height={40} alt=""/>
+                        <Image src={"/github.svg"} width={40} height={40} alt="" />
                         <text className="text-white font-semibold">Github</text>
                     </Link>
                     <Link href={"https://www.linkedin.com/in/jose-chiconela-507941286/"} className="flex flex-col gap-2 items-center">
-                        <Image src={"/LinkedIn_icon.svg.webp"} width={40} height={40} alt=""/>
+                        <Image src={"/LinkedIn_icon.svg.webp"} width={40} height={40} alt="" />
                         <text className="text-white font-semibold">Linkedin</text>
                     </Link>
                 </div>
             </div>
 
-            {/* Formulário de Contato */}
             <div>
                 <h5 className="text-xl font-bold text-white my-2">Send me an Email</h5>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -91,15 +97,18 @@ const ContactSection = () => {
                         className="border border-gray-300 p-2 rounded"
                         rows={4}
                     />
-                    <button type="submit" className="
-                    bg-blue-500 
-                    text-white p-2 rounded
-                    bg-gradient-to-r
-                    from-black
-                    via-fuchsia-900
-                    to-gray-900
-                    ">
-                        Send
+                    <button
+                        type="submit"
+                        className="
+                        bg-blue-500 
+                        text-white p-2 rounded
+                        bg-gradient-to-r
+                        from-black
+                        via-fuchsia-900
+                        to-gray-900"
+                        disabled={isLoading}
+                    >
+                        {isLoading ? 'Sending...' : 'Send'}
                     </button>
                 </form>
             </div>

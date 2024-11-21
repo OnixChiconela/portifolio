@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     const transporter = nodemailer.createTransport({
         host: 'smtp.mail.me.com',
         port: 587,
-        secure: false, // Set to true if using port 465 or 587 with TLS
+        secure: false,
         auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS,
@@ -19,26 +19,21 @@ export async function POST(request: Request) {
 
     transporter.verify((error, success) => {
         if (error) {
-            console.log("Erro de conexão:", error);
+            // console.log("Erro de conexão:", error);
         } else {
-            console.log("Conexão com o servidor SMTP bem-sucedida.");
+            // console.log("Conexão com o servidor SMTP bem-sucedida.");
         }
     });
-    
-
-    console.log("Email:", process.env.EMAIL_USER);
-    console.log("Password:", process.env.EMAIL_PASS);
 
 
     const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_USER, // E-mail de destino
+        to: process.env.EMAIL_USER,
         subject: `Nova mensagem de ${name}`,
         html: message,
         replyTo: email
     };
 
-    console.log("From ", email)
 
     try {
         await transporter.sendMail(mailOptions);

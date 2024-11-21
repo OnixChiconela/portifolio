@@ -69,7 +69,7 @@ export default function Home() {
 
 
   return (
-    <div>
+    <div className="">
       <Navbar
         refs={{
           hiSection: hiSectionRef,
@@ -288,8 +288,6 @@ export default function Home() {
           <text>__</text>
           <text> 💀 😅 </text>
         </motion.div>
-
-        {/* <div className="h-16 bg-gradient-to-b from-[#d2d2d2] to-[#fff]" /> */}
       </div>
     </div>
   );

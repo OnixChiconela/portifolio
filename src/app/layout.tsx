@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ClientOnly } from "./components/ClientOnly";
 import { Nunito_Sans } from "next/font/google"
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Jose Chiconela",
@@ -27,9 +28,19 @@ export default async function RootLayout({
       </head>
       <body className={font.className}>
         <ClientOnly>
+        <ToastContainer
+                position="top-right" 
+                autoClose={3000} 
+                hideProgressBar={false} 
+                newestOnTop={true} 
+                closeOnClick 
+                draggable 
+                pauseOnHover 
+                theme="dark" 
+            />
           <div></div>
         </ClientOnly>
-        <div className="pb-20">
+        <div className="">
           {children}
         </div>
       </body>

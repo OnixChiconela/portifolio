@@ -30,16 +30,16 @@ const ProjectHead: React.FC<ProjectHeadProps> = ({
                     rounded-b-xl
                     origin-bottom
                 "
-                initial={{ scaleY: 0 }} // Start from scaled down
-                animate={{ scaleY: 1 }} // Animate to full scale
-                exit={{ scaleY: 0 }} // Optional: animate out by scaling down
-                transition={{ duration: 0.8, ease: "easeInOut" }} // Duration and easing
+                initial={{ scaleY: 0 }}
+                animate={{ scaleY: 1 }}
+                exit={{ scaleY: 0 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
             >
                 <Image
                     alt="Image"
                     src={coverImage}
                     fill
-                    className="object-cover w-full h-full max-w-screen-xl mx-auto" // Ensure the image covers the area
+                    className="object-cover w-full h-full max-w-screen-xl mx-auto"
                 />
             </motion.div>
             <div className="

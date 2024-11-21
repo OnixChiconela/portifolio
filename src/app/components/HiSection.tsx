@@ -18,7 +18,6 @@ export const HiSection = () => {
     return (
         <section>
             <div className="grid grid-cols-1 lg:grid-cols-12">
-                {/* Image div */}
                 <div className='col-span-5 place-self-center mb-10 lg:mb-0 cursor-pointer'>
                     <div className="rounded-full bg-[#181818] w-[250px] h-[250px] mb-6 lg:w-[300px] lg:h-[300px] relative"
                         onClick={() => handleImageClick("/profile.png")}
@@ -60,11 +59,10 @@ export const HiSection = () => {
                     onClick={handleCloseModal}
                 >
                     <div
-                        className="relative bg-white p-4 rounded-md max-w-3xl w-11/12"
-                        onClick={(e) => e.stopPropagation()} // Prevent backdrop click from closing modal
+                        className="relative bg-white p-4 rounded-md max-w-3xl w-11/12 "
+                        onClick={(e) => e.stopPropagation()}
                     >
-                        {/* Close Button Container */}
-                        <div className="absolute top-2 right-2">
+                        <div className="absolute top-5 right-9">
                             <button
                                 className="bg-white hover:bg-gray-300 text-black text-2xl font-bold rounded-full w-10 h-10 flex items-center justify-center border border-gray-400"
                                 onClick={handleCloseModal}
@@ -77,8 +75,8 @@ export const HiSection = () => {
                             src={selectedImage}
                             alt="Selected"
                             className="object-contain mx-auto"
-                            width={800}
-                            height={600}
+                            width={1000}
+                            height={800}
                             style={{ maxHeight: '80vh', maxWidth: '100%' }}
                         />
                     </div>

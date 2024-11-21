@@ -59,17 +59,23 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
     };
 
     const ImageCard: React.FC<imageProps> = ({ src }) => {
-        if (!src) return null; // Se não tiver src, não renderiza nada
+        if (!src) return null;
 
         return (
-            <div className="h-40 lg:hover:-mt-1 md:h-80 rounded-md cursor-pointer
-                p-1 border-transparent bg-clip-border bg-gradient-to-b
-                from-black via-fuchsia-950 to-black shadow-md
-                shadow-black
-            "
-                onClick={() => handleImageClick(src)}
+            <div
+                className="h-40 lg:hover:-mt-1 md:h-80 rounded-md cursor-pointer
+            p-1 border-transparent bg-clip-border bg-gradient-to-b
+            from-black via-fuchsia-950 to-black shadow-md
+            shadow-black"
             >
-                <Image src={src} height={300} width={200} alt="Image 1" className="object-cover h-full w-full rounded-md" />
+                <Image
+                    src={src}
+                    alt="Image 1"
+                    width={2120}
+                    height={2120}
+                    quality={50}
+                    className="object-cover h-full w-full rounded-md"
+                />
             </div>
         )
     }
@@ -86,7 +92,6 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
                 </text>
             </div>
 
-            {/* Função 1 */}
             <motion.div
                 className="gap-3 flex flex-col"
                 initial={{ scaleY: 0 }}
@@ -98,13 +103,9 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
                 <div className="font-light text-neutral-900">{fun1Description}</div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full mt-10 justify-center items-center">
-                    {/* First Image */}
                     <ImageCard src={fun1Image1} />
-
-                    {/* Second Image */}
                     <ImageCard src={fun1Image2} />
 
-                    {/* Video */}
                     <div className="h-80 lg:h-80 col-span-1 lg:col-span-2 bg-gradient-to-r from-gray-950 to-black rounded-md">
                         <video controls className="h-full w-full rounded-md">
                             <source src={fun1Video} type="video/mp4" />
@@ -114,10 +115,8 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
                 </div>
             </motion.div>
 
-            {/* Divider */}
             <div className="border-b-[1px] my-20" />
 
-            {/* Função 2 */}
             <motion.div
                 className="gap-3 flex flex-col"
                 initial={{ scaleY: 0 }}
@@ -127,8 +126,6 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
             >
                 <text className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-fuchsia-950 to-black">{fun2}</text>
                 <div className="font-light text-neutral-900">{fun2Description}</div>
-
-                {/* Render Stages if present */}
                 {stages && stages.length > 0 && (
                     <div className="mt-4 space-y-2">
                         {stages.map((stage, index) => (
@@ -139,15 +136,9 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
                     </div>
                 )}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full mt-10 justify-center items-center">
-                    {/* First Image */}
                     <ImageCard src={fun2Image1} />
-
-
-                    {/* Second Image */}
                     <ImageCard src={fun2Image2} />
 
-
-                    {/* Video */}
                     <div className="h-80 lg:h-80 col-span-1 lg:col-span-2 bg-gradient-to-r from-gray-950 to-black rounded-md"> {/* Replace with Video component */}
                         <video controls className="h-full w-full rounded-md">
                             <source src={fun2Video} type="video/mp4" />
@@ -170,15 +161,10 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
                         <text className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-fuchsia-950 to-black">{fun3}</text>
                         <div className="font-light text-neutral-900">{fun3Description}</div>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full mt-10 justify-center items-center">
-                            {/* First Image */}
                             <ImageCard src={fun3Image1} />
-
-                            {/* Second Image */}
                             <ImageCard src={fun3Image2} />
 
-
-                            {/* Video */}
-                            <div className="h-80 lg:h-80 col-span-1 lg:col-span-2 bg-gradient-to-r from-gray-950 to-black rounded-md"> {/* Replace with Video component */}
+                            <div className="h-80 lg:h-80 col-span-1 lg:col-span-2 bg-gradient-to-r from-gray-950 to-black rounded-md">
                                 <video controls className="h-full w-full rounded-md">
                                     <source src="" type="video/mp4" />
                                     Your browser does not support the video tag.
@@ -192,11 +178,10 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
                             onClick={handleCloseModal}
                         >
                             <div
-                                className="relative bg-white p-4 rounded-md max-w-6xl w-11/12"
-                                onClick={(e) => e.stopPropagation()} // Prevent backdrop click from closing modal
+                                className="relative bg-gradient-to-b from-white to-[#ededed] p-4 rounded-md max-w-6xl w-11/12"
+                                onClick={(e) => e.stopPropagation()}
                             >
-                                {/* Close Button Container */}
-                                <div className="absolute top-2 right-2">
+                                <div className="absolute top-10 right-10">
                                     <button
                                         className="bg-white hover:bg-gray-300 text-black text-2xl font-bold rounded-full w-10 h-10 flex items-center justify-center border border-gray-400"
                                         onClick={handleCloseModal}
@@ -209,10 +194,13 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
                                     src={selectedImage}
                                     alt="Selected"
                                     className="object-contain mx-auto"
-                                    width={800} // Defina o tamanho desejado ou baseado na proporção da imagem
-                                    height={600} // Defina o tamanho desejado ou baseado na proporção da imagem
-                                    style={{ maxHeight: '80vh', maxWidth: '100%' }} // Usando estilo inline para controlar a altura e largura máximas
+                                    width={1100}
+                                    height={600}
+                                    // className="max-h-[80vh]"
+
+                                    style={{ maxHeight: '80vh', maxWidth: '100%' }}
                                 />
+                                {/* <img src={selectedImage} className="max-h-[80vh]"/> */}
                             </div>
                         </div>
                     )}

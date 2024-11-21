@@ -5,7 +5,7 @@ interface ExperienceProps {
   companyName?: string;
   duration?: string;
   content?: string[];
-  tools?: string // Array of bullet points
+  tools?: string
   toolsDesc?: string
   comp?: string
   compDesc?: string
