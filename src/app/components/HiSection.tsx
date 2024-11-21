@@ -45,7 +45,7 @@ export const HiSection = () => {
                     </p>
                     <div>
                         <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-black via-fuchsia-900 to-gray-900 hover:bg-[#181818] hover:text-white text-black mt-3">
-                            <a href="/CV/Resume.Jose_Chiconela.pdf" download>
+                            <a href="/CV/Resume.Jose_Chiconela.P.pdf" download>
                                 <span className="block bg-[#fff] hover:bg-slate-800 rounded-full px-5 py-2">Download Resume/CV</span>
                             </a>
                         </button>
