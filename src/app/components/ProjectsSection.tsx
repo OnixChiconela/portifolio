@@ -16,8 +16,8 @@ const DATA = [
     {
         id: 2,
         title: "Web Traffic Management Service",
-        description: "Created with java Spring Boot Ensuring security in your website",
-        image: "/engineer.webp",
+        description: "A robust web-traffic management system designed to optimize performance, enhance scalability, and ensure seamless user experiences by efficiently handling and distributing incoming requests across resources while maintaining high availability and reliability",
+        image: "/web_traffic.webp",
         tag: ["All"],
         path: "",
         git: "https://github.com/OnixChiconela/TrafficManagementService"

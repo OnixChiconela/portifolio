@@ -71,8 +71,8 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
                 <Image
                     src={src}
                     alt="Image 1"
-                    width={2120}
-                    height={2120}
+                    width={1120}
+                    height={1120}
                     quality={50}
                     className="object-cover h-full w-full rounded-md"
                 />
