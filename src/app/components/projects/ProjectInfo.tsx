@@ -67,6 +67,8 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
             p-1 border-transparent bg-clip-border bg-gradient-to-b
             from-black via-fuchsia-950 to-black shadow-md
             shadow-black"
+
+            onClick={() => handleImageClick(src)}
             >
                 <Image
                     src={src}
