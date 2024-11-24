@@ -5,7 +5,7 @@ export const projectR: Project =
 {
     id: 1,
     title: "Restaurant Listing and Reservation Platform",
-    coverImage: "/properties/project-cover.png",
+    coverImage: "/properties/page_cover.png",
     description: `A platform focused on restaurants, allowing individuals of legal age to create listings 
     for their spaces, and enabling people of acceptable age to make reservations. The primary goal is to increase visibility for small, medium, and large establishments, connecting people with new places and culinary experiences
     .`,
