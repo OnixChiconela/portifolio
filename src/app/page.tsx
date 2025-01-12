@@ -10,6 +10,7 @@ import ContactSection from "./components/ContactSection";
 import Experience from "./components/Experience";
 import { listingdesc2, listingdesc3, listingsdesc1, webtraffic1, webtraffic2 } from "./types";
 import { Navbar } from "./components/navbar/Navbar";
+import Opinions from "./components/Opinions";
 
 const scrollAnimation = {
   hidden: { opacity: 0, y: 30 },
@@ -47,6 +48,7 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  
 
   const hiSectionRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -237,7 +239,7 @@ export default function Home() {
 
           <motion.div
             ref={projectsRef}
-            className="px-4 lg:px-28 flex justify-center items-center max-w-screen-xl mx-auto"
+            className="px-4 lg:px-28 md:pb-36 flex justify-center items-center max-w-screen-xl mx-auto"
             initial="hidden"
             animate={sectionVisible.projects ? "visible" : "hidden"}
             variants={scrollAnimation}
@@ -246,6 +248,13 @@ export default function Home() {
             <ProjectsSection />
           </motion.div>
 
+          <motion.div
+            className="px-4 lg:px-28 flex items-start justify-start max-w-screen-lg mx-auto"
+            ref={projectsRef}
+          >
+            <hr className="bg-white" />
+            <Opinions />
+          </motion.div>
           <motion.div
             className="bg-[#161616] h-full py-10"
             initial="hidden"
