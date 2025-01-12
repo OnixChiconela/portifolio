@@ -87,10 +87,10 @@ const ArticlePage = () => {
                                     About This Article
                                 </p>
                                 <p>
-                                    This article explores the journey of launching a startup, covering essential phases like idea generation
-                                    , MVP creation, and embracing a founder's mindset. It provides actionable insigths for we aspiring entrepreneurs,
+                                    {`This article explores the journey of launching a startup, covering essential phases like idea generation
+                                    , MVP creation, and embracing a founder's mindset. It provides actionable insigths for we aspiring entrepreneurs.`}
                                     <br />
-                                    I want to share my opinion with all of you as an aspiring entrepreneur either.
+                                    {`I want to share my opinion with all of you as an aspiring entrepreneur either.`}
                                 </p>
                             </div>
 
@@ -192,7 +192,7 @@ const ArticlePage = () => {
                                             Founder Mindset and Marketing
                                         </h2>
                                         <div className="" style={{ lineHeight: 1.8 }}>
-                                            As a founder, success ultimately depends on you. Developing the right mindset is crucial: <text className="italic underline">you'll have to do what you can and learn what you can't to make your vision a reality.</text>
+                                            As a founder, success ultimately depends on you. Developing the right mindset is crucial: <text className="italic underline">{`you'll have to do what you can and learn what you can't to make your vision a reality.`}</text>
                                             <br /><br />
                                             <div className="font-semibold">Learning New Skills</div>
                                             {
@@ -240,8 +240,8 @@ const ArticlePage = () => {
                                             Collaboration and Team Building
                                         </h2>
                                         <div className="" style={{ lineHeight: 1.8 }}>
-                                            While passion drives success, collaboration accelerates it. If your strengths lie in product development, find someone whose expertise complements yours--like marketing or finance. Many
-                                            success startups, such as Google and Apple, were build by co-founders with disting but complementary skill sets. <br />
+                                            {`While passion drives success, collaboration accelerates it. If your strengths lie in product development, find someone whose expertise complements yours--like marketing or finance. Many
+                                            success startups, such as Google and Apple, were build by co-founders with disting but complementary skill sets.`} <br />
                                             <div>
                                                 <a className="font-semibold">Practical Tip:</a> Attend local startup meetups, pitch events, or connect on platforms like LinkedIn to find potential collaborators. Shared vision and complementary skills are often the secret
                                                 ingredients for long-term success
