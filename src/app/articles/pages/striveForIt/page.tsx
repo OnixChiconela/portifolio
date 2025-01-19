@@ -67,13 +67,15 @@ const ArticlePage = () => {
                 <div className="pt-16">
                     <Container>
                         <div className="flex flex-col gap-10">
-                            <h1 className="text-xl md:text-2xl font-bold">
-                                Strive for It: Building Your Own Company <text>💀</text>
-                            </h1>
-                            <div className="flex flex-col gap-4">
-                                <div>
-                                    {article?.subtitle}
+                            <div>
+                                <h1 className="text-xl md:text-2xl font-bold">
+                                    Strive for It: Building Your Own Company <text>🏆</text>
+                                </h1>
+                                <div className="sm:opacity-0">
+                                    Creating and managing a company as a first-time founder
                                 </div>
+                            </div>
+                            <div className="flex flex-col gap-4">
                                 <h1 className="text-lg font-semibold ">
                                     Author: Jose Chiconela
                                 </h1>
@@ -98,7 +100,7 @@ const ArticlePage = () => {
                             <div className="flex flex-col gap-8">
                                 <div className="flex flex-col gap-2">
                                     <h2 className="text-lg font-semibold">
-                                        Create a Company <text>💀</text>
+                                        Create a Company <text>🏗️</text>
                                     </h2>
                                     <div className="" style={{ lineHeight: 1.8 }}>
                                         {`
@@ -115,7 +117,7 @@ const ArticlePage = () => {
                                 <hr />
                                 <div className="flex flex-col gap-2">
                                     <h2 className="text-lg font-semibold">
-                                        The Idea <text>💀</text>
+                                        The Idea <text>💡</text>
                                     </h2>
                                     <div className="" style={{ lineHeight: 1.8 }}>
                                         {`We often hear that starting point of any successful company is identifying a problem and solving it. And yes, this strategy works--many successful founders will attest to it.But
@@ -148,7 +150,7 @@ const ArticlePage = () => {
                                     <hr />
                                     <div className="flex flex-col gap-3">
                                         <h2 className="text-lg font-semibold pt-4">
-                                            The Product
+                                            The Product 📦
                                         </h2>
                                         <div className="" style={{ lineHeight: 1.8 }}>
                                             {`
@@ -172,7 +174,7 @@ const ArticlePage = () => {
                                                 <li className="">
                                                     <a className="font-semibold">Launch quickly:</a> {` An early release helps you gauge wether people will adopt your solution.`}
                                                 </li>
-                                                <li className="font-semibold">
+                                                <li className="">
                                                     <a className="font-semibold">Engage your users:</a>{` Seek their feedback and improve iteratively based on their needs.`}
                                                 </li>
                                             </ul><br />
@@ -189,7 +191,7 @@ const ArticlePage = () => {
                                     <div className="flex flex-col gap-3">
                                         <hr />
                                         <h2 className="text-lg font-semibold">
-                                            Founder Mindset and Marketing
+                                            Founder Mindset and Marketing 🧠
                                         </h2>
                                         <div className="" style={{ lineHeight: 1.8 }}>
                                             As a founder, success ultimately depends on you. Developing the right mindset is crucial: <text className="italic underline">{`you'll have to do what you can and learn what you can't to make your vision a reality.`}</text>
@@ -204,7 +206,7 @@ const ArticlePage = () => {
                                             <br />
                                             <ul className='list-disc font-medium pl-5 flex flex-col gap-1'>
                                                 <li className="">
-                                                    <a className="font-semibold">Leverage social media:</a>{` Leverage social media: Build your presence on platforms like Instagram or TikTok, where authenticity and creativity trump expesinve campaigns.`}
+                                                    <a className="font-semibold">Leverage social media:</a>{` Build your presence on platforms like Instagram or TikTok, where authenticity and creativity trump expesinve campaigns.`}
                                                 </li>
                                                 <hr />
                                                 <li className="">
@@ -237,7 +239,7 @@ const ArticlePage = () => {
                                     <div className="flex flex-col gap-3">
                                         <hr />
                                         <h2 className="text-lg font-semibold">
-                                            Collaboration and Team Building
+                                            Collaboration and Team Building 🤝
                                         </h2>
                                         <div className="" style={{ lineHeight: 1.8 }}>
                                             {`While passion drives success, collaboration accelerates it. If your strengths lie in product development, find someone whose expertise complements yours--like marketing or finance. Many
@@ -254,18 +256,18 @@ const ArticlePage = () => {
                                     <div className="flex flex-col gap-3">
                                         <hr />
                                         <p className="text-lg font-semibold">
-                                            Overcoming Challenges
+                                            Overcoming Challenges 🧗‍♂️
                                         </p>
                                         <div className="" style={{ lineHeight: 1.8 }}>
                                             {`Launching a company isn't all smooth sailing. There are challenges to handle, like:`}
                                             <br />
                                             <ul className='list-disc font-medium pl-5 flex flex-col gap-1'>
                                                 <li className="">
-                                                    <a className="font-semibold">Imposter syndrome:</a>{` I heard a lot about  this, but I didn't know how to deal with. Even experienced founders faced doubts early on. Action dispels fear, so it's way betterfocus on progress over perfection.`}
+                                                    <a className="font-semibold">Imposter syndrome:</a>{` I heard a lot about  this, but I didn't know how to deal with. Even experienced founders faced doubts early on. Action dispels fear, so it's way better focus on progress over perfection.`}
                                                 </li>
                                                 <hr />
                                                 <li className="">
-                                                    <a className="font-semibold">Criticism of the MVP:</a>{` Criticism of the MVP: Feedback is a tool for growth. Rather than defending your product, listin to users and adapt accordingly.`}
+                                                    <a className="font-semibold">Criticism of the MVP:</a>{` Feedback is a tool for growth. Rather than defending your product, listin to users and adapt accordingly.`}
                                                 </li>
                                                 <hr />
                                                 <li className="">
@@ -281,7 +283,7 @@ const ArticlePage = () => {
                                     <div className="flex flex-col gap-3">
                                         <hr />
                                         <p className="text-lg font-semibold">
-                                            Customers Feedback and Interation
+                                            Customers Feedback and Interation 💰
                                         </p>
                                         <div className="" style={{ lineHeight: 1.8 }}>
                                             {`listening to your users can make or break your product, I presume😅. Make it easy for customer to share feedback via survey, live chats, or even direct interviews.
@@ -299,7 +301,7 @@ const ArticlePage = () => {
                                             Funding and Financial Strategy
                                         </p>
                                         <div className="" style={{ lineHeight: 1.8 }}>
-                                            {`If you make all the way to this part well done my friend, now it's time to grow your startup, now it's about where to find money to keep you alive, it's about have financial strategies.
+                                            {`If you make all the way to this part, well done my friend, now it's time to grow your startup, now it's about where to find money to keep you alive, it's about have financial strategies.
                                              Securing resources to build your product can be intimidating. The only thing I can do it's recommend you explore options like:
                                             `}
                                             <br />
@@ -363,9 +365,9 @@ const ArticlePage = () => {
                         </div>
                     </Container>
                     <footer className="w-full h-16 bg-white z-40 pt-10">
-                        <div className="px-4 sm:px-2 md:px-10 xl:px-20 absolute w-full border-t-4 bg-neutral-200">
+                        <div className="absolute w-full border-t-4 bg-neutral-200">
                             <Container>
-                                <div className="flex justify-between items-center pt-5">
+                                <div className="flex flex-col gap-4 sm:flex-row sm:gap-0 justify-between items-center pt-5">
                                     <div className="flex flex-row gap-2">
                                         <p className="text-neutral-500">
                                             Check this {`-->`}
@@ -375,6 +377,10 @@ const ArticlePage = () => {
                                         </Link>
                                     </div>
                                     <div className="socials flex flex-row gap-5">
+                                        <Link href={"https://www.instagram.com/onix_chiconela"} className="flex flex-col gap-2 items-center">
+                                            <Image src={"/instagram.png"} width={30} height={30} alt="" />
+                                            <text className="text-black font-semibold">Instagram</text>
+                                        </Link>
                                         <Link href={"https://github.com/OnixChiconela"} className="flex flex-col gap-2 items-center">
                                             <Image src={"/github.svg"} width={30} height={30} alt="" />
                                             <text className="text-black font-semibold">Github</text>
