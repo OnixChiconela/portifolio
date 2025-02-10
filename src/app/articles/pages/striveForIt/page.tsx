@@ -55,7 +55,7 @@ const ArticlePage = () => {
                             relative
                         "
                         style={{
-                            minHeight: 'calc(100% + 50px)', // Faz com que sempre seja 50px maior que o container da imagem.
+                            minHeight: 'calc(100% + 50px)',
                         }}
                     >
                         <h1 className="text-2xl md:text-4xl text-white font-semibold text-center">
@@ -120,7 +120,7 @@ const ArticlePage = () => {
                                         The Idea <text>💡</text>
                                     </h2>
                                     <div className="" style={{ lineHeight: 1.8 }}>
-                                        {`We often hear that starting point of any successful company is identifying a problem and solving it. And yes, this strategy works--many successful founders will attest to it.But
+                                        {`We often hear that starting point of any successful company is identifying a problem and solving it. And yes, this strategy works many successful founders will attest to it.But
                                         where does this great idea come from?
                                         `}
                                         <br /><br />
@@ -154,7 +154,7 @@ const ArticlePage = () => {
                                         </h2>
                                         <div className="" style={{ lineHeight: 1.8 }}>
                                             {`
-                                            So, you've got your idea. Now what? The Next step is to build your product--but don't fall into the trap of perfectionism. Spending too much time crafting the "perfect" solution without real-world
+                                            So, you've got your idea. Now what? The Next step is to build your product but don't fall into the trap of perfectionism. Spending too much time crafting the "perfect" solution without real-world
                                             feedback can lead to wasted effort.
 
                                             This is where the concept of the MVP (Minumum Viable Product) comes in. It applies not only to technology but to virtually any industry. Your MVP should:
@@ -214,7 +214,7 @@ const ArticlePage = () => {
                                                 </li>
                                                 <hr />
                                                 <li className="">
-                                                    <a className="font-semibold">Build trust:</a>{` Create blogs, videos, or bihind-the-scenes content that hightlights your journey and connects eith potential users.`}
+                                                    <a className="font-semibold">Build trust:</a>{` Create blogs, videos, or behind the scenes content that hightlights your journey and connects eith potential users.`}
                                                 </li>
                                             </ul>
                                             <br />
@@ -242,11 +242,11 @@ const ArticlePage = () => {
                                             Collaboration and Team Building 🤝
                                         </h2>
                                         <div className="" style={{ lineHeight: 1.8 }}>
-                                            {`While passion drives success, collaboration accelerates it. If your strengths lie in product development, find someone whose expertise complements yours--like marketing or finance. Many
+                                            {`While passion drives success, collaboration accelerates it. If your strengths lie in product development, find someone whose expertise complements yours like marketing or finance. Many
                                             success startups, such as Google and Apple, were build by co-founders with disting but complementary skill sets.`} <br />
                                             <div>
                                                 <a className="font-semibold">Practical Tip:</a> Attend local startup meetups, pitch events, or connect on platforms like LinkedIn to find potential collaborators. Shared vision and complementary skills are often the secret
-                                                ingredients for long-term success
+                                                ingredients for long term success
                                             </div>
                                         </div>
                                     </div>
@@ -287,7 +287,7 @@ const ArticlePage = () => {
                                         </p>
                                         <div className="" style={{ lineHeight: 1.8 }}>
                                             {`listening to your users can make or break your product, I presume😅. Make it easy for customer to share feedback via survey, live chats, or even direct interviews.
-                                            When your product based on what people need, you're not only improving--you're building trust.
+                                            When your product based on what people need, you're not only improving, you're building trust.
                                             `}
                                             <a className="underline">Example:</a> Slack, now leader in workplace communication, started as a gaming company but pivoted to messaging after realizing the potential from internal user feedback.
                                         </div>
@@ -365,14 +365,18 @@ const ArticlePage = () => {
                         </div>
                     </Container>
                     <footer className="w-full h-16 bg-white z-40 pt-10">
-                        <div className="absolute w-full border-t-4 bg-neutral-200">
+                        <div className="absolute w-full border-t-4 
+                             bg-gradient-to-r
+                            from-purple-200
+                            via-gray-200
+                            to-fuchsia-200">
                             <Container>
                                 <div className="flex flex-col gap-4 sm:flex-row sm:gap-0 justify-between items-center pt-5">
                                     <div className="flex flex-row gap-2">
                                         <p className="text-neutral-500">
                                             Check this {`-->`}
                                         </p>
-                                        <Link href={"http://fireus.vercel.app"} className="font-semibold hover:underline">
+                                        <Link href={"https://fireus.vercel.app"} className="font-semibold hover:underline">
                                             fireus.vercel.app
                                         </Link>
                                     </div>

@@ -5,30 +5,33 @@ import { SimpleMenu } from './SimpleMenu'
 
 const SimpleNavbar = () => {
     return (
-        <div>
+
+        <div className="fixed w-full bg-tra z-20 shadow-sm">
             <div
-                className='
-            py-4
-            border-b-[1px]
-            '
+                className="
+                    py-4
+                    border-b-[1px]
+                    "
             >
                 <Container>
-                    <div className="
-                        flex
-                        flex-row
-                        items-center
-                        justify-between
-                        gap-3
-                        md:gap-0
-                    ">
+                    <div
+                        className="
+                                flex
+                                flex-row
+                                items-center
+                                justify-between
+                                gap-3
+                                md:gap-0
+                            "
+                    >
                         <Logo />
                         <SimpleMenu />
                     </div>
                 </Container>
+                {/* <Categories /> */}
             </div>
         </div>
-
-    )
+    );
 }
 
 export default SimpleNavbar

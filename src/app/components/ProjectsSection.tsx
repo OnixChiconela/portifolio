@@ -16,7 +16,7 @@ const DATA = [
     {
         id: 2,
         title: "Web Traffic Management Service",
-        description: "A robust web-traffic management system designed to optimize performance, enhance scalability, and ensure seamless user experiences by efficiently handling and distributing incoming requests across resources while maintaining high availability and reliability",
+        description: "A web-traffic management system designed to optimize performance, enhance scalability, and ensure seamless user experiences by efficiently handling and distributing incoming requests across resources while maintaining high availability and reliability",
         image: "/web_traffic.webp",
         tag: ["All"],
         path: "",
@@ -42,7 +42,7 @@ const ProjectsSection = () => {
                     <ProjectCard
                         key={project.id}
                         title={project.title}
-                        description={project.description}
+                        description={project.description.length > 280 ? project.description.slice(1, 280) + "..." : project.description}
                         imgUrl={project.image}
                         path={project.path}
                         git={project.git}

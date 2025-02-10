@@ -19,8 +19,10 @@ const ProjectHead: React.FC<ProjectHeadProps> = ({
         <>
             <motion.div
                 className="
-                    h-[60vh]
-                    xl:h-[70vh]
+                    w-full
+                    h-64
+                    md:h-[500px]
+                    xl:h-[624px]
                     justify-center items-center max-w-screen-xl mx-auto
                     px-20
                     lg:px-28

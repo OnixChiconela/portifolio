@@ -39,9 +39,9 @@ const ProjectCard = ({ imgUrl, title, description, path, git }: any,) => {
                     )}
                 </div>
             </div>
-            <div className="text-white rounded-b-xl rounded-t-xl bg-[#181818] py-6 px-4 h-52">
+            <div className="text-white rounded-b-xl rounded-t-xl bg-[#181818] py-6 px-4 h-52 md:h-72">
                 <h5 className="text-xl font-semibold mb-2">{title}</h5>
-                <p>{description}</p>
+                <p>{description as string}</p>
             </div>
         </div>
     );

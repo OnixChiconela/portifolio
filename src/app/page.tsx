@@ -48,7 +48,7 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
 
   const hiSectionRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
@@ -140,28 +140,7 @@ export default function Home() {
               Experience
             </text>
           </div>
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center px-4 lg:px-28 max-w-screen-xl mx-auto">
-          <Experience
-            title="Leeva Digital Agency"
-            companyName="Intern"
-            duration="Sep 2023 - Jan 2024"
-            content={[
-              "Replaced Firebase with a custom backend service for scalability.",
-              "Defined system requirements in close collaboration with clients.",
-              "Enhanced system efficiency through RESTful API development."
-            ]}
-          />
-          <Experience
-            title="Reus Listing and Reserves"
-            companyName="Software Developer"
-            duration="Jan 2024 - Present"
-            content={[
-              "Designed and implemented user-friendly interfaces.",
-              "Improved the backend performance of existing services.",
-              "Worked with Agile teams to deliver high-quality software."
-            ]}
-          />
-        </div> */}
+
           <div className="px-4 lg:px-28 mt-6 flex justify-center items-center max-w-screen-xl mx-auto">
             <Experience
               title="Intern Full-Stack Developer"
@@ -248,35 +227,46 @@ export default function Home() {
             <ProjectsSection />
           </motion.div>
 
+          {/* <div className="items-center justify-center max-w-screen-xl flex">
+          <hr className="bg-white " />
+            <motion.div
+              className="px-4 lg:px-28 pt-12 md:pt-0 flex flex-col gap-12"
+              ref={projectsRef}
+              initial="hidden"
+              animate={sectionVisible.projects ? "visible" : "hidden"}
+              variants={scrollAnimation}
+              transition={{ duration: 0.8 }}
+            >
+              <Opinions />
+            </motion.div>
+          </div> */}
+
           <motion.div
-            className="px-4 lg:px-28 flex items-start justify-start max-w-screen-lg mx-auto"
-            ref={projectsRef}
-          >
-            <hr className="bg-white" />
-            <Opinions />
-          </motion.div>
-          <motion.div
-            className="bg-[#161616] h-full py-10"
+            className="bg-[#161616] h-full py-0"
             initial="hidden"
             animate={sectionVisible.contact ? "visible" : "hidden"}
             variants={scrollAnimation}
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="border-b-[1px] my-16"
-              initial={{ opacity: 0 }}
-              animate={sectionVisible.projects ? "visible" : "hidden"}
-              variants={scrollAnimation}
-              transition={{ duration: 0.6 }}
-            />
-            <motion.div
               ref={contactRef}
-              className="px-14 lg:px-28 pb-10 max-w-screen-xl mx-auto"
+              className="px-14 lg:px-28 pb-10 max-w-screen-xl mx-auto flex flex-col gap-5"
               initial="hidden"
               animate={sectionVisible.about ? "visible" : "hidden"}
               variants={scrollAnimation}
               transition={{ duration: 0.8 }}
             >
+              <div className="pt-12 md:pt-0">
+                <Opinions />
+              </div>
+              <motion.div
+                className="border-b-[1px] my-16"
+                initial={{ opacity: 0 }}
+                animate={sectionVisible.projects ? "visible" : "hidden"}
+                variants={scrollAnimation}
+                transition={{ duration: 0.6 }}
+              />
+
               <ContactSection />
             </motion.div>
           </motion.div>

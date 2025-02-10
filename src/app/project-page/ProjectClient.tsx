@@ -21,7 +21,7 @@ const ProjectClient: React.FC<ProjectClientProps> = ({
         visible: { opacity: 1, scale: 1 },
     };
     return (
-        <div className=" mx-auto">
+        <div className="mx-auto">
             <div>
                 <SimpleNavbar />
                 <div>

@@ -34,15 +34,19 @@ const Opinions = () => {
             to-white h-16'>
                 What I have wrote
             </h2>
-            <div>
+            <div className="flex flex-col gap-4">
                 {/* {articles && articles.map((article) => ( */}
                 {/* // <div key={article.id} className="pb-4">  */}
                 <OpinionInput
                     title={"Strive For It"}
                     description={"Creating and managing a company as a first-time founder"}
-
                     onClick={() => router.push(`articles/pages/striveForIt`)}
                 />
+                {/* <OpinionInput
+                    title={"First Time and Solo Founder"}
+                    description={"Creating and managing a company as a first-time founder"}
+                    onClick={() => router.push(`articles/pages/striveForIt`)}
+                /> */}
                 {/* //  </div> */}
                 {/* ))} */}
             </div>

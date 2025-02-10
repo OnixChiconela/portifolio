@@ -20,10 +20,10 @@ export const HiSection = () => {
             <div className="grid grid-cols-1 lg:grid-cols-12">
                 <div className='col-span-5 place-self-center mb-10 lg:mb-0 cursor-pointer'>
                     <div className="rounded-full bg-[#181818] w-[250px] h-[250px] mb-6 lg:w-[300px] lg:h-[300px] relative"
-                        onClick={() => handleImageClick("/profile.png")}
+                        onClick={() => handleImageClick("/ig_profile.png")}
                     >
                         <Image
-                            src={`/profile.png`}
+                            src={`/ig_profile.png`}
                             alt="it&apos;s Onix"
                             className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full"
                             width={200}
