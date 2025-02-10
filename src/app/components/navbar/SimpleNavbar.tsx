@@ -28,7 +28,6 @@ const SimpleNavbar = () => {
                         <SimpleMenu />
                     </div>
                 </Container>
-                {/* <Categories /> */}
             </div>
         </div>
     );
