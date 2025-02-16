@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Heading from "../Heading";
 import { motion } from "framer-motion";
+import Container from "../Container";
 
 interface ProjectHeadProps {
     title: string;
@@ -46,7 +47,7 @@ const ProjectHead: React.FC<ProjectHeadProps> = ({
             </motion.div>
             <div className="
                 px-20
-                my-20
+                mt-20
                 lg:px-28
                 justify-center items-center max-w-screen-xl mx-auto
             ">
@@ -54,6 +55,17 @@ const ProjectHead: React.FC<ProjectHeadProps> = ({
                     title={title}
                     subtitle={subtitle}
                 />
+            </div>
+            <div className="
+                    px-20
+                    mt-10
+                    lg:px-28
+                    underline
+                    text-blue-500
+                    max-w-screen-xl
+                    mx-auto
+                    ">
+                <a href="https://fireus.vercel.app">Test it</a>
             </div>
         </>
     );

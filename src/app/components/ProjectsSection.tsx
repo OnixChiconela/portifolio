@@ -8,7 +8,7 @@ const DATA = [
         id: 1,
         title: "Restaurant Project",
         description: "Create a restaurant listing and host your guests or just explore new places and culinary experiences",
-        image: "/properties/page_cover.png",
+        image: "/coming/final_thumb.png",
         tag: ["Mobile"],
         path: "/project-page",
         git: "/"
