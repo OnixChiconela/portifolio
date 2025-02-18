@@ -65,7 +65,7 @@ const ProjectHead: React.FC<ProjectHeadProps> = ({
                     max-w-screen-xl
                     mx-auto
                     ">
-                <a href="https://fireus.vercel.app">Test it</a>
+                <a href="https://fireus.vercel.app/info-landing">Test it</a>
             </div>
         </>
     );
