@@ -38,11 +38,12 @@ export const HiSection = () => {
                         </span>
                         <text className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-fuchsia-950 to-black">Jose Chiconela</text>
                     </h1>
-                    <p className="text-lg lg:text-xl mb-4 lg:pr-5">
+                    <h1 className="text-[4px] text-transparent">Jose Chiconela</h1>
+                    <h2 className="text-lg lg:text-xl mb-4 lg:pr-5">
                         <text className="font-bold">Software developer</text> related to <text className="font-bold">backend development</text> while expanding expertise in
                         <text className="font-bold"> mobile development</text>, seeking to leverage technical and soft skills to contribute to a dynamic, forward-thinking organization.
                         With focus on driving innovation and delivering high quality results.
-                    </p>
+                    </h2>
                     <div>
                         <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-black via-fuchsia-900 to-gray-900 hover:bg-[#181818] hover:text-white text-black mt-3">
                             <a href="/CV/Resume.Jose_Chiconela.P.pdf" download>

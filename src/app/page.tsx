@@ -34,9 +34,9 @@ export default function Home() {
     // Atualiza a visibilidade das seções com base na posição do scroll
     if (scrollY > 0) setSectionVisible((prev) => ({ ...prev, about: true }));
     if (scrollY > windowHeight) setSectionVisible((prev) => ({ ...prev, experience: true }));
-    if (scrollY > windowHeight * 1.5) setSectionVisible((prev) => ({ ...prev, additionalExperience: true }));
-    if (scrollY > windowHeight * 2) setSectionVisible((prev) => ({ ...prev, projects: true }));
-    if (scrollY > windowHeight * 2.5) setSectionVisible((prev) => ({ ...prev, contact: true }));
+    if (scrollY > windowHeight * 2) setSectionVisible((prev) => ({ ...prev, additionalExperience: true }));
+    if (scrollY > windowHeight * 2.5) setSectionVisible((prev) => ({ ...prev, projects: true }));
+    if (scrollY > windowHeight * 3) setSectionVisible((prev) => ({ ...prev, contact: true }));
   };
 
   useEffect(() => {
@@ -194,8 +194,8 @@ export default function Home() {
               ]}
               tools="Tools"
               toolsDesc="TypeScript, Nest JS, react native, JWT, MongoDB, and other technologies to create both frontend and backend components"
-              comp={"Project Completion"}
-              compDesc="December 2024 - January 2025"
+              comp={"Check it"}
+              projectLink="https://fireus.vercel.app/info-landing"
             />
             <Experience
               title="Software developer (owner)"

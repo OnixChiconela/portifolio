@@ -13,11 +13,11 @@ const ProjectCard = ({ imgUrl, title, description, path, git }: any,) => {
     };
 
     return (
-        <div className="cursor-pointer group">
+        <div className="cursor-pointer group" onClick={handleClick}>
             <div
                 className="h-52 md:h-72 hover:-mt-1 rounded-t-xl relative rounded-b-xl mb-5"
                 style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
-                onClick={handleClick}
+                
             >
                 <div className="
                     overlay items-center justify-center absolute to-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex flex-row gap-5 

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 interface ExperienceProps {
@@ -9,6 +10,7 @@ interface ExperienceProps {
   toolsDesc?: string
   comp?: string
   compDesc?: string
+  projectLink?: string
 }
 
 // const Experience: React.FC<ExperienceProps> = ({
@@ -74,7 +76,8 @@ const Experience: React.FC<ExperienceProps> = ({
   tools,
   toolsDesc,
   comp,
-  compDesc
+  compDesc,
+  projectLink
 }) => {
   return (
     <div className="p-2 w-full">
@@ -94,7 +97,7 @@ const Experience: React.FC<ExperienceProps> = ({
          h-full
        "
       >
-        <span className="block bg-white rounded-lg p-8 h-full flex flex-col justify-between">
+        <span className=" bg-white rounded-lg p-8 h-full flex flex-col justify-between">
           <h3 className="text-lg font-bold">{title}</h3>
           <p className="text-gray-700 font-semibold my-2">{companyName}</p>
           <p className="text-gray-500">{duration}</p>
@@ -111,6 +114,13 @@ const Experience: React.FC<ExperienceProps> = ({
           {comp ? (
             <div className="mt-2">
               <strong>{comp}:</strong> <span className="text-gray-600 font-normal">{compDesc}</span>
+            </div>
+          ) : null}
+          {projectLink ? (
+            <div className='mt-2'>
+              <Link href={projectLink} className="">
+                <text className="font-semibold text-blue-500 hover:underline hover:text-blue-600">{projectLink}</text>
+              </Link>
             </div>
           ) : null}
         </span>

@@ -56,16 +56,24 @@ const ProjectHead: React.FC<ProjectHeadProps> = ({
                     subtitle={subtitle}
                 />
             </div>
-            <div className="
-                    px-20
+            <div className="mt-6 flex flex-col md:flex-row gap-4 justify-center px-3 md:px-0">
+                <div className="
                     mt-10
                     lg:px-28
-                    underline
-                    text-blue-500
                     max-w-screen-xl
                     mx-auto
+                    bg-gradient-to-br
+                    from-[#FFD700]
+                    to-[#ffb700]
+                    hover:from-[#E6C200]
+                    hover:to-[#E6C200]
+                    py-3 px-6
+                    rounded-full
+                    transition-all cursor-pointer 
+                    shadow-md
                     ">
-                <a href="https://fireus.vercel.app/info-landing">Test it</a>
+                    <a href="https://fireus.vercel.app/info-landing">Test it</a>
+                </div>
             </div>
         </>
     );

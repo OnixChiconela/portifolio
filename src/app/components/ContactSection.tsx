@@ -64,6 +64,10 @@ const ContactSection = () => {
                         <Image src={"/LinkedIn_icon.svg.webp"} width={40} height={40} alt="" />
                         <text className="text-white font-semibold">Linkedin</text>
                     </Link>
+                    <Link href={"https://www.instagram.com/onix_chiconela"} className="flex flex-col gap-2 items-center">
+                        <Image src={"/instagram.png"} width={40} height={40} alt="" />
+                        <text className="text-white font-semibold">Instagram</text>
+                    </Link>
                 </div>
             </div>
 

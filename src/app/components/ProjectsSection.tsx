@@ -6,8 +6,9 @@ import ProjectCard from './ProjectCard';
 const DATA = [
     {
         id: 1,
-        title: "Restaurant Project",
-        description: "Create a restaurant listing and host your guests or just explore new places and culinary experiences",
+        title: "Fireus",
+        description: `Share your food business or explore new experience as a 
+        guest, connect wih new people, discover unique places, and enjoy unforgettable food experiences`,
         image: "/coming/final_thumb.png",
         tag: ["Mobile"],
         path: "/project-page",
@@ -16,7 +17,8 @@ const DATA = [
     {
         id: 2,
         title: "Web Traffic Management Service",
-        description: "A web-traffic management system designed to optimize performance, enhance scalability, and ensure seamless user experiences by efficiently handling and distributing incoming requests across resources while maintaining high availability and reliability",
+        description: `A web-traffic management system designed to optimize performance, enhance scalability, 
+        and ensure seamless user experiences by efficiently handling and distributing incoming requests across resources while maintaining high availability and reliability`,
         image: "/web_traffic.webp",
         tag: ["All"],
         path: "",
@@ -26,7 +28,7 @@ const DATA = [
         id: 3,
         title: "Portifolio",
         description: "",
-        image: "/properties/project-cover.png",
+        image: "/portifolio.png",
         tag: ["All"],
         path: "",
         git: "#"
